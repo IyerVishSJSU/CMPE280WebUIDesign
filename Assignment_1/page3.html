@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 3</title>
+    <link rel="stylesheet" type="text/css" href="./Login Page_files/style1.css">
+</head>
+<body>
+    <div class="largebox">
+        <h3 style="font-size: 14px;font-family: verdana">Question 3</h3>
+        <div id="box1_left">
+            <p>As per the latest twitter news, complete the article snippet
+            by selecting appropriate choices for the blanks</p>
+        </div>
+        <form class="myForm" id="myForm">
+        <table width=100% height=100%>
+            <tr>
+                <td class="space">
+                    <label><input type="radio" name="choice1" value="650">Option 1 Mark1: $650 </label><label><input type="radio" name="choice2" value="Twitter">Option 1 Mark2: Twitter</label><br><br>
+                    <label><input type="radio" name="choice1" value="550">Option 2 Mark1: $550 </label><label><input type="radio" name="choice2" value="Google">Option 2 Mark2:Google</label><br><br>
+                    <label><input type="radio" name="choice1" value="650">Option 3 Mark1: $650 </label><label><input type="radio" name="choice2" value="Facebook">Option 3 Mark2: Facebook</label><br><br>
+                </td>
+                <td class="space">
+                    <blockquote style="text-align: right|justify;">
+                        Twitter wants more cash. The company announced two<br>
+                        <label><mark>$<input type="text" name="blank1" class="num1" value="650" readonly="readonly" /></mark>
+                        </label> million debt offerings in a filing today, each with a<br>
+                        potential $100 increase provided that the sales are<br>
+                        oversubscribed. Assuming full tip, including the $100 million<br>
+                        boosters <mark><label><input type="text" name="blank2" class="num2" value="Twitter" readonly="readonly" /></label></mark> will raise upto $1.5 billion with the two<br>
+                        offerings
+                    </blockquote>
+                    <footer style="font-size: 13px;padding: 5px">
+                        <strong>Source:</strong>http://techcrunch.com/2014/09/10/twitter-to-raise-up-to-1-5b-in-debt-offering/
+                    </footer>
+                </td>
+            </tr>
+        </table>
+        <div style="padding: 5px;">
+            <input type="button" name="submit" onclick="getOption();" value="Submit & Next">
+            <a href="./page3.html"><input type="button" name="cancel" value="Cancel & Clear"></a>
+        </div>
+    </form>
+    </div>
+
+    <script type="text/javascript">
+        var sz1 = document.forms['myForm'].elements['choice1'];
+        var sz2 = document.forms['myForm'].elements['choice2'];
+
+        // loop through list
+        for (var i=0, len=sz1.length; i<len; i++) {
+            sz1[i].onclick = function() { // assign onclick handler function to each
+             // put clicked radio button's value in total field
+                this.form.elements.blank1.value = this.value;
+            };
+            sz2[i].onclick = function() { // assign onclick handler function to each
+             // put clicked radio button's value in total field
+                this.form.elements.blank2.value = this.value;
+            };
+        }
+
+        function getOption() {
+            // body...
+            var radios = document.getElementsByName('choice2');
+
+            var url= window.location.href;
+            var urlval=parseInt(url.substring(url.indexOf('=')+1));
+            for (var i = 0, length = radios.length; i < length; i++) {
+                    if (radios[i].checked) {
+                        if (radios[i].value==="Google") {
+                        location.href= "./page4.html?ans="+(1+urlval);
+                    }
+                    else{
+                        location.href= "./page4.html?ans="+(0+urlval);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

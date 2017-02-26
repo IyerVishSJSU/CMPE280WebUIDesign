@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey</title>
+    <link rel="stylesheet" type="text/css" href="./Login Page_files/style1.css">
+</head>
+<body>
+    <div class="largebox">
+        <h3 style="font-size: 14px;font-family: verdana">Survey</h3>
+        <form>
+        <p style="font-size: 14px;">How did you like the center ?</p>
+        <table>
+            <tr>
+                <td style="font-size: 14px; vertical-align: top;">
+                    Comments:
+                </td>
+                <td>
+                    <textarea rows="4" cols="50">
+                    </textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="font-size: 17px;">Select Text Area Location:</p>
+                </td>
+            </tr>
+        </table>
+        City: &nbsp;&nbsp;&nbsp;
+        <input list="cities" name="cities">
+        <datalist id="cities">
+            <option value="San Jose">
+            <option value="San Francisco">
+            <option value="Palo Alto">
+            <option value="Santa Clara">
+            <option value="Sunnyvale">
+            <option value="Mountain View">
+        </datalist>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Room No: &nbsp;&nbsp;&nbsp;
+        <select>
+            <option value="210">Room 210</option>
+            <option value="211">Room 211</option>
+            <option value="212">Room 212</option>
+            <option value="213">Room 213</option>
+            <option value="214">Room 214</option>
+        </select>
+        <div style="margin:10px;padding: 5px;">
+             <input type="button" name="submit" onclick="getOption();" value="Submit & Get Score">
+             <input type="button" name="skip" onclick="getOption();" value="Skip and Get Score">
+        </div>
+    </form>
+    </div>
+    <script type="text/javascript">
+        function getOption() {
+            // body...
+            //var radios = document.getElementsByName('choice');
+            var url= window.location.href;
+            var urlval=parseInt(url.substring(url.indexOf('=')+1));
+            location.href= "./page6_Thanks.html?ans="+urlval;
+                }
+    </script>
+</body>
+</html>

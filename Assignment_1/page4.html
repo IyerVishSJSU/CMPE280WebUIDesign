@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 4</title>
+    <link rel="stylesheet" type="text/css" href="./Login Page_files/style1.css">
+</head>
+<body>
+    <div class="largebox">
+        <h3 style="font-size: 14px;font-family: verdana">Question 4</h3>
+        <div id="box1_left">
+            <p>Watch the video and answer the following question.<br>
+                What is the source as mentioned in the video?</p>
+        </div>
+        <form>
+        <table width=50% height=100%>
+            <tr>
+                <td class="space" style="width:70%">
+                    <input type="radio" name="choice" value="1" style="margin: 20px 10px 20px 10px;">NASA.Gov
+                    <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;">Data.Gov<br>
+                    <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;">Facebook
+                    <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;">XYZ.net
+                </td>
+                <td style="width: 30%">
+                    <video src="./NASA 2017 - Building the Future.mp4" width="320" height="240" controls style="border:1px solid black;"></video><br><br>
+                    <strong>Building the Future</strong>
+                    <footer style="font-size: 12px;">
+                        <p><strong>Source:</strong> https://www.youtube.com/watch?v=cTULoZggpcw</p>
+                    </footer>
+                </td>
+            </tr>
+        </table>
+        <div style="margin:10px;padding: 5px;">
+             <input type="button" name="submit" onclick="getOption();" value="Submit & Next">
+             <a href="./page4.html"><input type="button" name="cancel" value="Cancel & Clear"></a>
+        </div>
+    </form>
+    </div>
+
+    <script type="text/javascript">
+        function getOption() {
+            // body...
+            var radios = document.getElementsByName('choice');
+            var url= window.location.href;
+            var urlval=parseInt(url.substring(url.indexOf('=')+1));
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    location.href= "./page5_Survey.html?ans="+(parseInt(radios[i].value)+urlval);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

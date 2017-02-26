@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page 2</title>
+    <link rel="stylesheet" type="text/css" href="./Login Page_files/style1.css">
+    <script type="text/javascript" async
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=MML_CHTML">
+    </script>
+</head>
+<body>
+    <div class="largebox">
+        <h3 style="font-size: 14px;font-family: verdana">Question 2</h3>
+        <div id="box1_left">
+            <p>Select the cosine theorem formula.</p>
+        </div>
+        <form>
+            <table width=100% height=100%>
+            <tr>
+                <td class="space">
+                    <input type="radio" name="choice" value="1">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mrow>
+                                <mi>cos</mi>
+                                <mo>(</mo>
+                                <mi>&alpha;</mi>
+                                <mo>&plusmn;</mo>
+                                <mi>&beta;</mi>
+                                <mo>)</mo>
+                            </mrow>
+                            <mo>=</mo>
+                            <mrow>
+                                <mi>cos</mi>
+                                <mi>&alpha;</mi>
+                                <mi>cos</mi>
+                                <mi>&beta;</mi>
+                                <mo>&mnplus;</mo>
+                                <mi>sin</mi>
+                                <mi>&alpha;</mi>
+                                <mi>sin</mi>
+                                <mi>&beta;</mi>
+                            </mrow>
+                        </mrow>
+                    </math>
+                </td>
+                <td class="space">
+                    <input type="radio" name="choice" value="0">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mrow>
+                                <mi>sin</mi>
+                                <mo>(</mo>
+                                <mi>&alpha;</mi>
+                                <mo>&plusmn;</mo>
+                                <mi>&beta;</mi>
+                                <mo>)</mo>
+                            </mrow>
+                            <mo>=</mo>
+                            <mrow>
+                                <mi>sin</mi>
+                                <mi>&alpha;</mi>
+                                <mi>cos</mi>
+                                <mi>&beta;</mi>
+                                <mo>&plusmn;</mo>
+                                <mi>cos</mi>
+                                <mi>&alpha;</mi>
+                                <mi>sin</mi>
+                                <mi>&beta;</mi>
+                            </mrow>
+                        </mrow>
+                    </math>
+                </td>
+            </tr>
+            <tr>
+                <td class="space">
+                    <input type="radio" name="choice" value="0">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mrow>
+                                <mi>sin</mi>
+                                <mi>&alpha;</mi>
+                                <mo>+</mo>
+                                <mi>sin</mi>
+                                <mi>&beta;</mi>
+                            </mrow>
+                            <mo>=</mo>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>sin</mi>
+                                <mfenced open="(" close=")">
+                                    <mfrac>
+                                        <mi>
+                                            <mrow>
+                                                <mi>&alpha;</mi>
+                                                <mo>+</mo>
+                                                <mi>&beta;</mi>
+                                            </mrow>
+                                        </mi>
+                                        <mi>
+                                            <mn>2</mn>
+                                        </mi>
+                                    </mfrac>
+                                </mfenced>
+                                <mi>cos</mi>
+                                <mfenced open="(" close=")">
+                                    <mfrac>
+                                        <mi>
+                                            <mrow>
+                                                <mi>&alpha;</mi>
+                                                <mo>-</mo>
+                                                <mi>&beta;</mi>
+                                            </mrow>
+                                        </mi>
+                                        <mi>
+                                            <mn>2</mn>
+                                        </mi>
+                                    </mfrac>
+                                </mfenced>
+                            </mrow>
+                        </mrow>
+                    </math>
+                </td>
+                <td class="space">
+                    <input type="radio" name="choice" value="0">
+                    <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mrow>
+                            <mrow>
+                                <mi>sin</mi>
+                                <mi>&alpha;</mi>
+                                <mo>-</mo>
+                                <mi>sin</mi>
+                                <mi>&beta;</mi>
+                            </mrow>
+                            <mo>=</mo>
+                            <mrow>
+                                <mn>2</mn>
+                                <mi>cos</mi>
+                                <mfenced open="(" close=")">
+                                    <mfrac>
+                                        <mi>
+                                            <mrow>
+                                                <mi>&alpha;</mi>
+                                                <mo>+</mo>
+                                                <mi>&beta;</mi>
+                                            </mrow>
+                                        </mi>
+                                        <mi>
+                                            <mn>2</mn>
+                                        </mi>
+                                    </mfrac>
+                                </mfenced>
+                                <mi>sin</mi>
+                                <mfenced open="(" close=")">
+                                    <mfrac>
+                                        <mi>
+                                            <mrow>
+                                                <mi>&alpha;</mi>
+                                                <mo>-</mo>
+                                                <mi>&beta;</mi>
+                                            </mrow>
+                                        </mi>
+                                        <mi>
+                                            <mn>2</mn>
+                                        </mi>
+                                    </mfrac>
+                                </mfenced>
+                            </mrow>
+                        </mrow>
+                    </math>
+                </td>
+            </tr>
+            </table>
+            <div style="margin: 10px;padding: 35px;">
+                <input type="button" name="submit" onclick="getOption();" value="Submit & Next">
+                <a href="./page2.html"><input type="button" name="cancel" value="Cancel and Clear"></a>
+            </div>
+
+        </form>
+
+    </div>
+    <script type="text/javascript">
+        function getOption() {
+            // body...
+            var radios = document.getElementsByName('choice');
+            var url= window.location.href;
+            var urlval=parseInt(url.substring(url.indexOf('=')+1));
+            for (var i = 0, length = radios.length; i < length; i++) {
+                if (radios[i].checked) {
+                    location.href= "./page3.html?ans="+(parseInt(radios[i].value)+urlval);
+                }
+               // else{
+               //      location.href= "./page3.html?ans="+(parseInt(0)+urlval);
+               //  }
+            }
+        }
+    </script>
+</body>
+</html>

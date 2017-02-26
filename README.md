@@ -1,4 +1,4 @@
-# CMPE280WebUIDesign
+# CMPE 280 Web UI Design - Assignment 1
 This directory contains course projects for coursework:"Web UI Design &amp; Development"
 
 ## Download Steps

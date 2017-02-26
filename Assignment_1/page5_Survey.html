@@ -54,8 +54,8 @@
             // body...
             //var radios = document.getElementsByName('choice');
             var url= window.location.href;
-            var urlval=parseInt(url.substring(url.indexOf('=')+1));
-            location.href= "./page6_Thanks.html?ans="+urlval;
+            var urlstr=url.substring(url.indexOf('?'));
+            location.href= "./page6_Thanks.html"+urlstr;
                 }
     </script>
 </body>

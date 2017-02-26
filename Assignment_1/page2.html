@@ -121,7 +121,7 @@
                     </math>
                 </td>
                 <td class="space">
-                    <input type="radio" name="choice" value="0">
+                    <input type="radio" name="choice" value="0" checked>
                     <math xmlns="http://www.w3.org/1998/Math/MathML">
                         <mrow>
                             <mrow>
@@ -186,7 +186,7 @@
             var urlval=parseInt(url.substring(url.indexOf('=')+1));
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
-                    location.href= "./page3.html?ans="+(parseInt(radios[i].value)+urlval);
+                    location.href= "./page3.html?q="+(parseInt(radios[i].value)+urlval);
                 }
                // else{
                //      location.href= "./page3.html?ans="+(parseInt(0)+urlval);

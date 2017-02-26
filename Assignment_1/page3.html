@@ -63,14 +63,14 @@
             var radios = document.getElementsByName('choice2');
 
             var url= window.location.href;
-            var urlval=parseInt(url.substring(url.indexOf('=')+1));
+            var urlstr=url.substring(url.indexOf('?'));
             for (var i = 0, length = radios.length; i < length; i++) {
                     if (radios[i].checked) {
                         if (radios[i].value==="Google") {
-                        location.href= "./page4.html?ans="+(1+urlval);
+                        location.href= "./page4.html"+urlstr+"&r="+(1);
                     }
                     else{
-                        location.href= "./page4.html?ans="+(0+urlval);
+                        location.href= "./page4.html"+urlstr+"&r="+(0);
                     }
                 }
             }

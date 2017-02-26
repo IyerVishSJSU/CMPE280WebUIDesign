@@ -7,40 +7,59 @@
 <body>
     <div class="largebox">
         <h3 style="font-size: 14px;font-family: verdana">Score Card</h3>
-        <div style="border: 1px solid black; height:50%; margin-top: 50px;margin-left: 10px;margin-right: 10px;">
-        <form method="post" class="ResultForm" id="ResultForm">
+        <div style="border: 1px solid black; height:60%; margin-top: 50px;margin-left: 10px;margin-right: 10px;">
+        <form class="ResultForm" id="ResultForm" onload="getUrlVars();">
             <details id="q1" style="margin: 5px; ">
                 <summary>Quantative Section</summary>
                 <ul>
-                    <li><data value="1"><strong>No of Questions:2</strong></data></li>
-                    <li><data value="2"><strong>Correct Answers:<label><input type="text" name="quant1" class="res1" value="0" readonly="readonly"  /></label></strong></data></li>
-                    <li><data value="3"><strong>Score: <label><input type="text" name="quant2" class="res1" value="0" readonly="readonly" />%</label></strong></data></li>
+                    <li><data value="1"><strong>No of Questions:</strong>2</data></li>
+                    <li><data value="2"><strong>Correct Answers:</strong><label><input type="text" id="quant1" class="res1" readonly="readonly" style="border: none;" /></label></data></li>
+                    <li><data value="3"><strong>Score:</strong> <label><input type="text" id="quant2" class="res1" readonly="readonly" style="border: none;width:25px"/>%</label></data></li>
                 </ul>
             </details>
             <details style="margin: 5px;">
                 <summary>Reading Section</summary>
                 <ul>
-                    <li><data value="1"><strong>No of Questions:1</strong></data></li>
-                    <li><data value="2"><strong>Correct Answers:</strong></data></li>
-                    <li><data value="3"><strong>Score:</strong></data></li>
+                    <li><data value="1"><strong>No of Questions:</strong>1</data></li>
+                    <li><data value="2"><strong>Correct Answers:</strong><label><input type="text" id="read1" class="res1" readonly="readonly" style="border: none;"/></label></data></li>
+                    <li><data value="3"><strong>Score:</strong><label><input type="text" id="read2" class="res1" readonly="readonly" style="border: none;width:25px"/>%</label></data></li>
                 </ul>
             </details>
             <details style="margin: 5px;">
                 <summary>Video Section</summary>
                 <ul>
-                    <li><data value="1"><strong>No of Questions:1</strong></data></li>
-                    <li><data value="2"><strong>Correct Answers:</strong></data></li>
-                    <li><data value="3"><strong>Score:</strong></data></li>
+                    <li><data value="1"><strong>No of Questions:</strong>1</data></li>
+                    <li><data value="2"><strong>Correct Answers:</strong><label><input type="text" id="vid1" class="res1" readonly="readonly" style="border: none;"/></label></data></li>
+                    <li><data value="3"><strong>Score:</strong><label><input type="text" id="vid2" class="res1" readonly="readonly" style="border: none;width:25px"/>%</label></data></li>
                 </ul>
             </details>
         </form>
         </div>
         <h1 style="text-align: center;">Thank You !!</h1>
-        <form>
-            <input type="button" name="submit" value="Finish" style="width: 300px; margin: auto 0;margin-left:520px;">
-        </form>
+            <input type="button" name="submit" value="Finish" style="width: 300px; margin: auto 0;margin-left:520px;" onclick="javascript:window.close()"/>
     </div>
     <script type="text/javascript">
+        function getUrlVars(myval)
+        {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+
+            for(var i = 0; i < hashes.length; i++){
+                 hash = hashes[i].split('=');
+                 vars.push(hash[0]);
+                 vars[hash[0]] = hash[1];
+            }
+             return vars[myval]?vars[myval]:0;
+        }
+        var get_qscore=getUrlVars("q");
+        var get_rscore=getUrlVars("r");
+        var get_vscore=getUrlVars("v");
+        document.getElementById('quant1').value=get_qscore;
+        document.getElementById('quant2').value=(parseInt(get_qscore)/2)*100;
+        document.getElementById('read1').value=get_rscore;
+        document.getElementById('read2').value=(parseInt(get_rscore)/1)*100;
+        document.getElementById('vid1').value=get_vscore;
+        document.getElementById('vid2').value=(parseInt(get_vscore)/1)*100;
     </script>
 </body>
 </html>

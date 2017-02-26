@@ -21,7 +21,7 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td class="space"><input type="radio" name="choice" value="0">
+                                        <td class="space"><input type="radio" name="choice" value="0" checked>
                                         <math xmlns="http://www.w3.org/1998/Math/MathML">
                                             <mrow>
                                                 <mi>y</mi>
@@ -186,11 +186,8 @@
             var urlval=0;
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
-                    location.href= "./page2.html?ans="+radios[i].value;
+                    location.href= "./page2.html?q="+radios[i].value;
                 }
-                /*else{
-                    location.href= "./page2.html?ans="+parseInt(0);
-                }*/
             }
         }
     </script>

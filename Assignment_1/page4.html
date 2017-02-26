@@ -16,7 +16,7 @@
             <tr>
                 <td class="space" style="width:70%">
                     <input type="radio" name="choice" value="1" style="margin: 20px 10px 20px 10px;">NASA.Gov
-                    <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;">Data.Gov<br>
+                    <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;" checked>Data.Gov<br>
                     <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;">Facebook
                     <input type="radio" name="choice" value="0" style="margin: 20px 10px 20px 10px;">XYZ.net
                 </td>
@@ -41,10 +41,10 @@
             // body...
             var radios = document.getElementsByName('choice');
             var url= window.location.href;
-            var urlval=parseInt(url.substring(url.indexOf('=')+1));
+            var urlstr=url.substring(url.indexOf('?'));
             for (var i = 0, length = radios.length; i < length; i++) {
                 if (radios[i].checked) {
-                    location.href= "./page5_Survey.html?ans="+(parseInt(radios[i].value)+urlval);
+                    location.href= "./page5_Survey.html"+urlstr+"&v="+parseInt(radios[i].value);
                 }
             }
         }

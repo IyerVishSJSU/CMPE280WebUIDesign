@@ -1,0 +1,62 @@
+body {
+  padding: 40px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+#main-area{
+  /* overflow to handle inner floating block */
+  overflow: hidden;
+}
+
+#side-btn{
+  margin-top: 30px;
+  float: left;
+  width: 30%;
+}
+
+#content-area{
+  float: right;
+  width: 70%;
+}
+
+.btn-body{
+  margin: 20px;
+  padding: 10px;
+}
+
+.btn{
+  text-decoration: none;
+  color: #fff;
+  background-color: #223e6b;
+  padding: 10px;
+  text-align: center;
+  letter-spacing: .5px;
+  font-size: large;
+  width: 200px;
+  white-space: normal;
+  border-radius: 10px;
+}
+#dialog{
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid green;
+  background-color: seagreen;
+  padding: 10px;
+  text-align: center;
+  letter-spacing: .5px;
+  font-size: large;
+  width: 200px;
+  white-space: normal;
+  transition-duration: 5s;
+}
+img{
+  width: 60%;
+  height: 60%;
+}
+span{
+  display: none;
+  padding: 10px;
+}

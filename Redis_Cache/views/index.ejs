@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Redis Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- Script Library -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+  <div id="main-area">
+    <div id="side-btn">
+      <div id="dialog">
+        Click for the first time
+      </div>
+      <div class="btn-body">
+        <input type="button" class="btn" value="Image CMPE Building" id="first"/>
+      </div>
+      <div class="btn-body">
+        <input type="button" class="btn" value="Image Dr. Martin Luther King Jr. Library" id="second"/>
+      </div>
+      <div class="btn-body">
+        <input type="button" class="btn" value="Image SJSU" id="third">
+      </div>
+    </div>
+    <div id="content-area">
+      <h1><%= title %></h1>
+      <div id="img-msg" style="margin-top: 10px; margin-bottom: 40px">
+      </div>
+      <span class="img-area1"></span>
+      <span class="img-area2"></span>
+      <span class="img-area3"></span>
+    </div>
+  </div>
+
+  <script src="/javascripts/pagecontrol.js"></script>
+  </body>
+</html>
